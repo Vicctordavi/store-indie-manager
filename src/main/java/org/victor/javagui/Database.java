@@ -4,10 +4,12 @@ import java.sql.*;
 
 public class Database {
 
-    private static final String URL = "jdbc:sqlite:usuarios.db";
+    private static final String URL = "jdbc:sqlite:/home/victor-davi/Códigos/ProjetosJava/Javagui/banco_usuarios.db";
+
 
 
     public static void criarTabela() {
+        System.out.println("Executando criarTabela() em Database...");
         try (Connection conn = DriverManager.getConnection(URL);
              Statement stmt = conn.createStatement()) {
 
@@ -18,11 +20,13 @@ public class Database {
                     "senha TEXT NOT NULL" +
                     ");";
             stmt.execute(sql);
+            System.out.println("Tabela usuarios criada ou já existia.");
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 
 
     public static boolean inserirUsuario(String nome, String usuario, String senha) {
