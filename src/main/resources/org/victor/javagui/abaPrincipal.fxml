@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="751.0" prefWidth="1293.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.victor.javagui.abaPrincipal">
+   <children>
+      <AnchorPane prefHeight="751.0" prefWidth="432.0" style="-fx-background-color: #2e6082;">
+         <children>
+            <Separator layoutY="129.0" prefHeight="6.0" prefWidth="432.0" />
+            <Text fill="WHITE" layoutX="49.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciamento de Produtos" textAlignment="CENTER" wrappingWidth="334.3310546875">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="174.0" fitWidth="168.0" layoutX="134.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagens/userGeral.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="174.0" layoutY="376.0" prefHeight="44.0" prefWidth="87.0" text="Usuário" textAlignment="CENTER" textFill="#ff7312">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <Text fx:id="nomeUsuario" fill="#ff7312" layoutX="98.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem vindo!" textAlignment="CENTER" wrappingWidth="241.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Pane layoutX="75.0" layoutY="518.0" prefHeight="165.0" prefWidth="284.0" style="-fx-background-color: white; -fx-background-radius: 40;;;">
+               <children>
+                  <Text layoutX="38.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total de produtos adicionados" textAlignment="CENTER" wrappingWidth="207.001953125">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="numeroTotalProdutos" layoutX="126.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="454.0" layoutY="32.0" prefHeight="144.0" prefWidth="253.0" style="-fx-background-color: #2e6082; -fx-background-radius: 40;">
+         <children>
+            <Text fill="WHITE" layoutX="23.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data" textAlignment="CENTER" wrappingWidth="207.001953125">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="dataAtual" fill="WHITE" layoutX="58.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="137.7265625">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="737.0" layoutY="32.0" prefHeight="144.0" prefWidth="253.0" style="-fx-background-color: #2e6082; -fx-background-radius: 40;">
+         <children>
+            <Text fill="WHITE" layoutX="22.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produtos para vencer" textAlignment="CENTER" wrappingWidth="207.001953125">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="produtosVencer" fill="WHITE" layoutX="111.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Button fx:id="addProdutoBtn" layoutX="1018.0" layoutY="34.0" mnemonicParsing="false" onAction="#abrirJanelaAdicionar" prefHeight="144.0" prefWidth="253.0" style="-fx-background-radius: 40; -fx-background-color: #2e6082;" text="Adicionar produto" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Pane layoutX="455.0" layoutY="247.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-radius: 25; -fx-background-color: gray;">
+         <children>
+            <Label layoutX="31.0" layoutY="5.0" text="Tabela Produtos" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TableView fx:id="tabelaProdutos" layoutX="455.0" layoutY="292.0" prefHeight="397.0" prefWidth="817.0">
+        <columns>
+          <TableColumn fx:id="colunaNome" prefWidth="200.0" text="Nome" />
+          <TableColumn fx:id="colunaPreco" prefWidth="184.0" text="Preço" />
+            <TableColumn fx:id="colunaCodigo" prefWidth="199.0" text="ID" />
+            <TableColumn fx:id="colunaValidade" prefWidth="233.0" text="Data de validade" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnExcluirProduto" layoutX="1189.0" layoutY="247.0" mnemonicParsing="false" onAction="#excluirProdutoSelecionado" style="-fx-background-color: gray;" text="Excluir" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Text fx:id="vazioExcluir" layoutX="891.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clique em uma linha da tabela para excluir!" visible="false" />
+   </children>
+</AnchorPane>
