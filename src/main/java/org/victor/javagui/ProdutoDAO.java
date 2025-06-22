@@ -10,7 +10,9 @@ import java.util.List;
 
 public class ProdutoDAO {
 
-    private static final String URL = "jdbc:sqlite:/home/victor-davi/Códigos/ProjetosJava/Javagui/produtos.db";
+    private static final String URL = "jdbc:sqlite:produtos.db";
+
+
 
 
     public static boolean excluirProdutoPorCodigo(String codigo) {

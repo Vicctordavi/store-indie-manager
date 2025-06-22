@@ -4,7 +4,8 @@ import java.sql.*;
 
 public class Database {
 
-    private static final String URL = "jdbc:sqlite:/home/victor-davi/Códigos/ProjetosJava/Javagui/banco_usuarios.db";
+    private static final String URL = "jdbc:sqlite:banco_usuarios.db";
+
 
 
 
